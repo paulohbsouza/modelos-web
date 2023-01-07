@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.debug{
+	border: 1px solid red;
+}
+
+.nav-tree {
+    width: 200px;
+}
+
+/* traço vertical */
+.file-list, .file-list ul {
+    list-style-type: none;
+    margin-left: 5px;
+    padding-left: 17px;
+    border-left: 1px dotted #000;
+}
+
+.file-list li {
+    position: relative;
+    padding-left: 0px;
+}
+
+/* traço horizontal nivel 1 */
+.file-list li a:before {
+    display:block;
+    content: "";
+    width:14px;
+    height:1px;
+    position:absolute;
+    border-bottom:1px dotted red;
+    top: 0.5em;
+    left:-16px;
+}
+
+/* traço horizontal nivel 2 */
+.file-list li ul > li:before {
+    display:block;
+    content: "";
+    position:absolute;
+    width: 14px;
+    height: 1px;
+    border-bottom:1px dotted orange; 
+    top: 0.5em;
+    left:-16px;
+} 
+
+.file-list .folder-root {
+    list-style-type: none;
+}
+
+.file-list .folder-root a {
+    text-decoration:none;
+}
+
+li.folder-root ul {
+    transition: all .3s ease-in-out;
+    overflow:hidden;
+}
+
+li.folder-root.closed > ul {
+   opacity:0;
+   max-height:0px;
+}
+
+li.folder-root.open > ul {
+   opacity:1;
+   display:block;
+}

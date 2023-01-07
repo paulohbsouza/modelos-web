@@ -1,0 +1,66 @@
+CRITICAL - 2022-01-14 20:13:37 --> The framework needs the following extension(s) installed and loaded: intl.
+#0 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\CodeIgniter.php(219): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+#1 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\CodeIgniter.php(177): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+#2 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#3 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\public\index.php(28): require('C:\\xampp7.4\\htd...')
+#4 {main}
+CRITICAL - 2022-01-14 20:15:33 --> The framework needs the following extension(s) installed and loaded: intl.
+#0 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\CodeIgniter.php(219): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+#1 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\CodeIgniter.php(177): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+#2 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#3 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\public\index.php(28): require('C:\\xampp7.4\\htd...')
+#4 {main}
+CRITICAL - 2022-01-14 20:15:35 --> The framework needs the following extension(s) installed and loaded: intl.
+#0 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\CodeIgniter.php(219): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+#1 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\CodeIgniter.php(177): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+#2 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#3 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\public\index.php(28): require('C:\\xampp7.4\\htd...')
+#4 {main}
+CRITICAL - 2022-01-14 20:17:13 --> The framework needs the following extension(s) installed and loaded: intl.
+#0 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\CodeIgniter.php(219): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+#1 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\CodeIgniter.php(177): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+#2 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#3 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\public\index.php(28): require('C:\\xampp7.4\\htd...')
+#4 {main}
+CRITICAL - 2022-01-14 20:17:22 --> The framework needs the following extension(s) installed and loaded: intl.
+#0 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\CodeIgniter.php(219): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+#1 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\CodeIgniter.php(177): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+#2 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#3 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\public\index.php(28): require('C:\\xampp7.4\\htd...')
+#4 {main}
+CRITICAL - 2022-01-14 20:17:39 --> The framework needs the following extension(s) installed and loaded: intl.
+#0 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\CodeIgniter.php(219): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+#1 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\CodeIgniter.php(177): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+#2 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#3 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\public\index.php(28): require('C:\\xampp7.4\\htd...')
+#4 {main}
+CRITICAL - 2022-01-14 20:18:26 --> The framework needs the following extension(s) installed and loaded: intl.
+#0 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\CodeIgniter.php(219): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+#1 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\CodeIgniter.php(177): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+#2 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#3 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\public\index.php(28): require('C:\\xampp7.4\\htd...')
+#4 {main}
+CRITICAL - 2022-01-14 20:32:52 --> The framework needs the following extension(s) installed and loaded: intl.
+#0 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\CodeIgniter.php(219): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+#1 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\CodeIgniter.php(177): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+#2 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#3 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\public\index.php(28): require('C:\\xampp7.4\\htd...')
+#4 {main}
+CRITICAL - 2022-01-14 14:31:40 --> Invalid file: home.php
+#0 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('home.php')
+#1 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\Common.php(1089): CodeIgniter\View\View->render('home', Array, true)
+#2 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\app\Controllers\Main.php(11): view('home')
+#3 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\CodeIgniter.php(825): App\Controllers\Main->index()
+#4 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#5 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-01-14 14:34:39 --> Invalid file: home.php
+#0 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('home.php')
+#1 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\Common.php(1089): CodeIgniter\View\View->render('home', Array, true)
+#2 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\app\Controllers\Main.php(11): view('home')
+#3 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\CodeIgniter.php(825): App\Controllers\Main->index()
+#4 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#5 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp7.4\htdocs\modelosWEB\php-JoaoRibeiro-CodeIgniter\proj-todolist\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}

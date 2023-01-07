@@ -1,0 +1,44 @@
+/* 
+ *
+ */
+
+@import "variables";
+@import "mixin";
+@import "extend";
+@import "operators";
+
+.teste {
+    background: $primary_color_gradient;
+    color: $primary_color;
+    width: 380px;
+    height: 250px;
+}
+
+.info1 {
+    @include theme;
+}
+.alert1 {
+    @include theme($theme: DarkRed);
+}
+.success1 {
+    @include theme($theme: DarkGreen);
+}
+  
+  .message {
+    @extend %message-shared;
+  }
+  
+  .success {
+    @extend %message-shared;
+    border-color: rgb(124, 209, 124);
+  }
+  
+  .error {
+    @extend %message-shared;
+    border-color: rgb(165, 70, 70);
+  }
+  
+  .warning {
+    @extend %message-shared;
+    border-color: yellow;
+  }

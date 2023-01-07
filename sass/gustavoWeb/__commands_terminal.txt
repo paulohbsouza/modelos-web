@@ -1,0 +1,2 @@
+sass --version
+sass _cdn/scss:_cdn/css --watch --style=compressed
