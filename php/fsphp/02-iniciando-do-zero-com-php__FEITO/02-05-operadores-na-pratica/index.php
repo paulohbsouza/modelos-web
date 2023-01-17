@@ -12,7 +12,7 @@ $operatorA = 5;
 $operators = [
     "a += 5" => ($operatorA += 5),
     "a -= 5" => ($operatorA -= 5),
-    "a *- 5" => ($operatorA *= 5),
+    "a *= 5" => ($operatorA *= 5),
     "a /= 5" => ($operatorA /= 5)
 ];
 var_dump($operators);
