@@ -1,0 +1,66 @@
+// Fonts
+
+// Roboto family, default to SITE
+@font-face {
+    font-family: 'Roboto-Thin';
+    src: url(../vendors/fonts/roboto/Roboto-Thin.ttf) format('truetype');
+    font-stretch: normal;
+    font-weight: 100;
+    font-style: normal;
+    font-display: auto;
+}
+
+@font-face {
+    font-family: 'Roboto-Light';
+    src: url(../vendors/fonts/roboto/Roboto-Light.ttf) format('truetype');
+    font-stretch: normal;
+    font-weight: 300;
+    font-style: normal;
+    font-display: auto;
+}
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url(../vendors/fonts/roboto/Roboto-Regular.ttf) format('truetype');
+    font-stretch: normal;
+    font-weight: 400;
+    font-style: normal;
+    font-display: auto;
+}
+
+@font-face {
+    font-family: 'Roboto-Medium';
+    src: url(../vendors/fonts/roboto/Roboto-Medium.ttf) format('truetype');
+    font-stretch: normal;
+    font-weight: 500;
+    font-style: normal;
+    font-display: auto;
+}
+
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url(../vendors/fonts/roboto/Roboto-Bold.ttf) format('truetype');
+    font-stretch: normal;
+    font-weight: 700;
+    font-style: normal;
+    font-display: auto;
+}
+
+@font-face {
+    font-family: 'Roboto-Black';
+    src: url(../vendors/fonts/roboto/Roboto-Black.ttf) format('truetype');
+    font-stretch: normal;
+    font-weight: 900;
+    font-style: normal;
+    font-display: auto;
+}
+
+// Quicksand family, default to DISPLAY
+@font-face {
+    font-family: 'Quicksand';
+    src: url(../vendors/fonts/quicksand/Quicksand-VariableFont_wght.ttf) format('truetype');
+    font-stretch: normal;
+    font-weight: 300 700;
+    font-style: normal;
+    font-display: auto;
+}

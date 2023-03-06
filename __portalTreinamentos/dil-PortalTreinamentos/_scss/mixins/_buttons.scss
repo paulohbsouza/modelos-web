@@ -1,0 +1,63 @@
+// Buttons 
+
+// Default
+@mixin button-theme ($input-value) {
+    background-color: #{$input-value};
+    color: #fff;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+    
+    &:hover {
+        background-color: darken($color: $input-value, $amount: 10%);
+    }
+}
+
+@each $color, $value in $theme-colors {
+    .btn-#{$color} {
+        @include button-theme($value);
+    }
+}
+
+// Outline
+@mixin button-theme-outline ($input-value) {
+    background-color: transparent;
+    color: #{$input-value};
+    border: 1px solid #{$input-value};
+    
+    &:hover {
+        background-color: darken($color: $input-value, $amount: 10%);
+        color: $white;
+        text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+    }
+}
+
+@each $color, $value in $theme-colors {
+    .btn-outline-#{$color} {
+        @include button-theme-outline($value);
+    }
+}
+
+
+// Sizes
+@mixin button-size {
+    -webkit-border-radius: $border-radius;
+    -moz-border-radius: $border-radius;
+    border-radius: $border-radius;
+    padding: $btn-padding-y $btn-padding-x;
+    font-size: $font-size-base;
+}
+
+@mixin button-size-sm {
+    -webkit-border-radius: $border-radius-sm;
+    -moz-border-radius: $border-radius-sm;
+    border-radius: $border-radius-sm;
+    padding: $btn-padding-y-sm $btn-padding-x-sm;
+    font-size: $btn-font-size-sm;
+}
+
+@mixin button-size-lg {
+    -webkit-border-radius: $border-radius-lg;
+    -moz-border-radius: $border-radius-lg;
+    border-radius: $border-radius-lg;
+    padding: $btn-padding-y-lg $btn-padding-x-lg;
+    font-size: $btn-font-size-lg;
+}

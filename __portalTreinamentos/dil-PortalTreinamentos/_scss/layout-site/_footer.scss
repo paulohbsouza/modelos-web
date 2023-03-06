@@ -1,0 +1,51 @@
+// Footer SITE
+
+footer {
+    margin-top: auto;
+    /*
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    */
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    height: 60px;
+    font-size: $font-size-sm;
+    border-top: 1px solid $gray-400;
+}
+
+.footer-follow {
+    display: flex;
+}
+
+.footer-follow ul {
+    display: flex;
+
+    li {
+        margin-left: 8px;
+        font-size: 18px;
+    }
+}
+
+.footer-follow a {
+    background-repeat: no-repeat;
+    background-position: right;
+    color: transparent;
+}
+
+.icon-face {
+    background-image: url(../img/icon-face.svg);
+}
+
+.icon-insta {
+    background-image: url(../img/icon-insta.svg);
+}
+
+.icon-link {
+    background-image: url(../img/icon-link.svg);
+}

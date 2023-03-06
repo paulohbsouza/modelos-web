@@ -1,0 +1,47 @@
+// Default ADMIN
+
+@import "header";
+
+body {
+    background-color: $body-bg;
+    color: $body-color;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+}
+
+/*
+div {
+    // teste
+    border: 1px solid rgb(247, 139, 139);
+}
+*/
+
+// Content (Tudo que esta abaixo do Header)
+.content {
+    display: flex;
+    background-color: $sidenav-bg;
+}
+
+@import "sidebar/sidebar";
+
+// Ant-Layout (Pode Utilizar Bootstrap-Grid 4.6.0)
+.ant-layout {
+    width: 100%;
+    background-color: $content-bg;
+
+    /* manter o footer bottom */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    // Por padrão sempre que criar uma "page" nova iniciar dentro de <SECTION></SECTION>
+    section {
+        margin: 24px;
+    }
+}
+
+@import "pages/home";
+//@import "pages/#";
+//@import "pages/#";
+
+@import "footer";

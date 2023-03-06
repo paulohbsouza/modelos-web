@@ -1,0 +1,97 @@
+// Components
+
+// Images
+.img-fluid {
+    @include img-fluid();
+}
+
+// Display (Ajustar função)
+.font-display {
+    @include font-display();
+}
+
+// Buttoms
+.btn {
+    @include button-size();
+}
+
+.btn-sm {
+    @include button-size-sm();
+}
+
+.btn-lg {
+    @include button-size-lg();
+}
+
+// Links
+.link-drtz {
+    /* provisório (Criar classe/mixins para link */
+    color: $drtzPrimary;
+    font-family: "Roboto-Regular";
+
+    &:hover {
+        color: $drtzSecondary;
+    }
+}
+
+// Modal
+.modal {
+    @include modal();
+}
+
+// Forms
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    padding: $input-padding-y $input-padding-x;
+    line-height: $input-line-height;
+    border: $border-width solid $input-border-color;
+    border-radius: $input-border-radius;
+    color: $input-color;
+
+    &::placeholder {
+        color: $input-placeholder-color;
+    }
+}
+
+// Cards
+.card-login {
+    @include card();
+    width: 290px;
+    height: 370px;
+
+    h5 {
+        font-size: $h5-font-size;
+        margin: 18px 0;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+
+        input {
+            margin: 12px 0;
+        }
+
+        span.checkbox {
+            display: flex;
+            align-items: center;
+            font-size: $font-size-sm;
+
+            label {
+                margin-left: 5px;
+            }
+        }
+
+        a {
+            margin-top: 18px;
+            text-align: center;
+        }
+
+        a.text {
+            font-size: $font-size-sm;
+        }
+    }
+}
+

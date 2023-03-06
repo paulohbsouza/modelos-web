@@ -1,0 +1,115 @@
+// Inscrição / Turmas
+
+//Default of page
+.inscricao-content {
+    padding: 48px 64px;
+}
+
+.inscricao-title-display {
+    font-size: $display4-size;
+    padding-bottom: 16px;
+}
+
+.inscricao-title-subtitle {
+    font-family: "Roboto-Light";
+    font-size: $h3-font-size;
+    color: $gray-600;
+    padding-bottom: 32px;
+}
+
+// Bloco de conteúdo
+.bloco-inscricao {
+    padding: 48px 0;
+    display: grid;
+    grid-template-columns: 0.6fr 1fr;
+    
+    //border: 1px solid #ccc;
+}
+
+.imagem-bloco { 
+    height: 100%;
+}
+
+.descricao-bloco {
+    background-color: $white;
+    margin-left: 12px;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow-sm;
+    padding: $padding-base-y $padding-base-x;
+
+    p {
+        margin-bottom: $paragraph-margin-bottom;
+    }
+}
+
+.turma-bloco {
+    display: flex;
+    
+    h3 {
+    font-family: 'Roboto-Bold';
+    font-size: $h3-font-size;
+    }
+
+    //provisório
+    .badge {
+        color: salmon;
+        margin-left: 24px;
+    }
+}
+
+.titulo-bloco {
+    margin: 24px 0;
+    font-family: 'Roboto-Medium';
+    font-size: $font-size-lg;
+}
+
+.periodo-bloco {
+    margin: 24px 0;
+    font-family: 'Roboto-Medium';
+    font-size: $font-size-lg;
+}
+
+.texto-bloco {
+
+    ul {
+        margin: 11px 0 22px 22px;
+
+        li {
+            margin-bottom: 4px;
+        }
+    }
+
+    span {
+        font-family: 'Roboto-Bold';
+    }
+}
+
+.botao-bloco {
+    margin: 0px 0 0px 0;
+    padding: 24px 0;
+    border-top: 2px solid $gray-400;
+}
+
+// Formulário de inscrição (Modal)
+.form-inscricao {
+    background-color: $white;
+    box-shadow: $box-shadow-base;
+    padding: $padding-base-y $padding-base-x;
+    border-radius: $border-radius;
+
+    margin: 85px auto;
+    width: 40%;
+    
+
+    animation-name: formInscricao;
+    animation-duration: 0.1s;
+    animation-delay: 0s;
+    animation-timing-function: ease-in-out;
+
+    @keyframes formInscricao {
+        from {margin-top: -100px;}
+        to {margin-top: 0;}
+    }
+}
+
+

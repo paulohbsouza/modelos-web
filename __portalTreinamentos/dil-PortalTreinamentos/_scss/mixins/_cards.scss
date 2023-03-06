@@ -1,0 +1,8 @@
+// Cards
+
+@mixin card {
+    background-color: $white;
+    padding: $padding-base-y $padding-base-x;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow-base;
+}

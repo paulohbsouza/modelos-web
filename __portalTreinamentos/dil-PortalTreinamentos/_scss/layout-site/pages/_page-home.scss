@@ -1,0 +1,32 @@
+// Home
+
+//Default of page
+.home-content {
+    display: grid;
+    grid-template-columns: 0.74fr 1fr;
+    align-items: center;
+    padding: 48px 64px;
+}
+
+.home-title-display {
+    font-size: $display3-size;
+    padding-bottom: 16px;
+}
+
+.home-title-subtitle {
+    font-family: "Roboto-Light";
+    font-size: $h3-font-size;
+    color: $gray-600;
+    padding-bottom: 32px;
+}
+
+//
+@media (max-width: 1280px) {
+    .home-title-display {
+        font-size: $display4-size;
+    }
+
+    .home-title-subtitle {
+        font-size: $h4-font-size;
+    }
+}

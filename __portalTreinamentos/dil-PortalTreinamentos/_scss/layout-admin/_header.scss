@@ -1,0 +1,54 @@
+// Header ADMIN
+
+header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 24px;
+    height: 60px;
+    align-items: center;
+    background-color: $white;
+    box-shadow: 0 3px 5px 0 rgb(0 0 0 / 20%), 0 8px 10px 1px rgb(0 0 0 / 14%), 0 3px 14px 2px rgb(0 0 0 / 12%);
+}
+
+.nav-logo {
+    width: 124px;
+}
+
+.nav-logo a {
+    display: block;
+    width: 100%;
+    font-size: 29px;
+    color: transparent;
+    text-indent: -100px;
+    background-image: url(../img/logo.png);
+    background-repeat: no-repeat;
+    background-position: 0 center;
+    background-size: contain;
+}
+
+.btnMenu {
+    display: flex;
+    align-items: center;
+    padding-left: 5.7rem;
+    height: 100%;
+    width: 100%;
+}
+
+.btnMenu .btnMenu-item {
+    padding: 0 20px 0 20px;
+    height: 100%;
+    line-height: 60px;
+
+    &:hover {
+        background-color: rgba(90, 205, 129, 0.1);
+    }
+}
+
+.nav-navbar ul {
+    display: flex;
+
+    li {
+        margin-left: 80px;
+    }
+}

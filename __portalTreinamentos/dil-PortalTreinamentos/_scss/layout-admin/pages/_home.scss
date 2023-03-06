@@ -1,0 +1,30 @@
+// Home
+
+.home-banner-admin {
+    height: 450px;
+    padding-top: 6rem;
+    background-image: url(../img/home-banner-admin.jpg);
+    background-repeat: no-repeat;
+    background-position: 0 center;
+    background-size: 100%;
+
+    h1 {
+        font-size: $display3-size;
+        padding-bottom: 32px;
+    }
+
+    p {
+        font-family: "Roboto-Light";
+        font-size: $h3-font-size;
+        color: $gray-600;
+        padding-bottom: 28px;
+    }
+    i::before {
+        content: '';
+        display: block;
+        border-radius: 4px;
+        width: 64px;
+        border: 2px solid $drtzSecondary;
+        margin-bottom: 28px;
+    }
+}

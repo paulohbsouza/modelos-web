@@ -1,0 +1,93 @@
+////////////////////////////////////////////fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
+////////////////////////////////////////////custom variable bootstrap 5.1
+$theme-colors: (
+        "primary": #0d6efd,
+        "secondary": #6c757d,
+        "success": #20c997,
+        "info": #0dcaf0,
+        "warning": #ffc107,
+        "danger": #dc3545,
+        "light": #f8f9fa,
+        "purple": #6f42c1,
+        "gray": #adb5bd,
+        "pink": #d63384,
+        "dark": #212529,
+);
+
+@import "../sass/default";
+
+$body-bg: #e9ecef;
+$font-family-sans-serif: 'Lato', sans-serif;
+/*
+$paragraph-margin-bottom: 0rem;
+$input-btn-padding-y: .5rem;
+*/
+
+////////////////////////////////////////////custom variable app
+$drtz-prymary:#212529; //gray-900
+$drtz-secondary: #5ACD81; //light-green
+/*
+$app-color-highlight: map-get($theme-colors, 'dark');
+$app-color-primary: #fff;
+$app-color-primary-highlight: #c9c9c9;
+$app-color-secondary: #c9c9c9;
+$app-color-secondary-highlight: #2c323f;
+
+$app-form-border-color-hover: #6362e7;
+$app-form-border-color-focus: #6362e7;
+*/
+
+////////////////////////////////////////////dashboard
+/* styling scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #000000;
+  border-radius: 7px;
+}
+::-webkit-scrollbar-thumb {
+  background: RGBA(90, 205, 129, 0.5);
+  border-radius: 7px;
+}
+/* grid layout */
+.container__dashboard {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: auto 1fr 1fr 1fr;
+  grid-template-rows: 61px 3fr;
+  grid-template-areas:
+        "sidebar nav nav nav"
+        "sidebar main main main";
+}
+@media only screen and (max-width: 978px) {
+  .container__dashboard {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas:
+            "nav"
+            "main";
+  }
+}
+/* Anicons */
+@font-face {
+  font-family: 'Anicons-Regular';
+  src: url(../assets/AniconsGX.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+.icon-menu {
+  font-family: "Anicons-Regular", sans-serif;
+  font-variation-settings: "TIME" 1;
+  transition: font-variation-settings 0.4s ease;
+  font-size: 1.5rem;
+  color: $drtz-prymary;
+}
+.icon-menu:hover {
+  font-family: "Anicons-Regular", sans-serif;
+  font-variation-settings: "TIME" 100;
+}

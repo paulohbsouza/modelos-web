@@ -1,0 +1,25 @@
+// Reset
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+div {
+    //display: block;
+}

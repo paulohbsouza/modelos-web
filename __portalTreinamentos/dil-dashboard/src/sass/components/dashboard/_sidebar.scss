@@ -1,0 +1,150 @@
+/* normal behavior */
+#sidebar {
+  width: 240px;
+  background: #2d3238;
+  grid-area: sidebar;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+
+  &:hover {
+    overflow-y: auto;
+  }
+}
+
+/* close sidebar */
+.close-sidebar {
+  display: none;
+}
+
+/* group header */
+.sidebar-title {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  color: $drtz-secondary;
+  background: RGBA(90, 205, 129, 0.1);
+}
+
+.sidebar-title > i {
+  min-width: 62px;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+.sidebar-title > span {
+  font-size: 1rem;
+}
+
+/* group menu link */
+.sidebar-menu .nav-links,
+.sidebar-menu .nav-links li ul {
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-menu .nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.sidebar-menu .nav-links h2 {
+  color: $drtz-secondary;
+  padding-left: 8px;
+  margin: 16px 0 8px 0;
+  font-size: 11px;
+  font-weight: 700;
+  opacity: 0.5;
+}
+
+.sidebar-menu .nav-links li {
+  transition: all 0.4s ease;
+
+  &:hover {
+    background: RGBA(90, 205, 129, 0.1);
+  }
+}
+
+.sidebar-menu .nav-links i {
+  min-width: 62px;
+  text-align: center;
+  font-size: 1.15rem;
+}
+
+.sidebar-menu .nav-links i.arrow {
+  min-width: 38px;
+  text-align: center;
+  transition: all 0.4s ease;
+  font-size: 11px;
+}
+.sidebar-menu .nav-links li.arrow i.arrow  {
+  transform: rotate(-180deg);
+}
+
+.sidebar-menu .nav-links li a {
+  display: flex;
+  align-items: center;
+  //justify-content: space-between;
+  height: 40px;
+  color: #ffffff;
+  font-size: 13px;
+  opacity: 0.5;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.sidebar-menu .nav-links li .sub-menu {
+  background: #343a40;
+  box-shadow: inset 0 3px 10px RGB(0 0 0 / 45%);
+  //display: none; //Use bootstrap collapse
+  transition: all 0.4s ease;
+}
+
+.sidebar-menu .nav-links li ul.sub-menu {
+  //padding: 5px 0; /////////////////////////////continuar >> testar ::pseudo elemento
+}
+
+.sidebar-menu .nav-links li .sub-menu a {
+  padding: 0 48px;
+}
+
+.sidebar-menu .nav-links li .sub-menu .link-name {
+  display: none;
+}
+
+/* small behavior */
+#sidebar.small {
+  //width: 62px;
+  //overflow-x: hidden;
+  //overflow-y: hidden;
+}
+
+
+/* responsive behavior */
+.sidebar-responsive {
+  display: inline !important;
+  z-index: 9999 !important;
+  left: 0 !important;
+  position: absolute;
+  width: 240px;
+}
+
+@media only screen and (max-width: 978px) {
+  #sidebar {
+    display: none;
+  }
+  .close-sidebar {
+    display: flex;
+    align-items: center;
+  }
+
+  .close-sidebar > i {
+    font-size: 1.75rem;
+    color: $drtz-secondary;
+    background: RGBA(255, 255, 255, 0.1);
+    border-radius: 0 0 0 11px;
+  }
+}

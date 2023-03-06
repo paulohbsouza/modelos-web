@@ -1,0 +1,107 @@
+//
+@function tint-color($color, $weight) {
+  @return mix(white, $color, $weight);
+}
+
+// Shade a color: mix a color with black
+@function shade-color($color, $weight) {
+  @return mix(black, $color, $weight);
+}
+
+$prefix: 'primary';
+$color: map-get($theme-colors, 'primary');
+$theme-colors: map-merge((
+        '#{$prefix}-100': tint-color($color, 80%),
+        '#{$prefix}-200': tint-color($color, 60%),
+        '#{$prefix}-300': tint-color($color, 40%),
+        '#{$prefix}-400': tint-color($color, 20%),
+        '#{$prefix}-500': $color,
+        '#{$prefix}-600': shade-color($color, 20%),
+        '#{$prefix}-700': shade-color($color, 40%),
+        '#{$prefix}-800': shade-color($color, 60%),
+        '#{$prefix}-900': shade-color($color, 80%),
+), $theme-colors);
+
+$prefix: 'secondary';
+$color: map-get($theme-colors, 'secondary');
+$theme-colors: map-merge((
+        '#{$prefix}-100': tint-color($color, 80%),
+        '#{$prefix}-200': tint-color($color, 60%),
+        '#{$prefix}-300': tint-color($color, 40%),
+        '#{$prefix}-400': tint-color($color, 20%),
+        '#{$prefix}-500': $color,
+        '#{$prefix}-600': shade-color($color, 20%),
+        '#{$prefix}-700': shade-color($color, 40%),
+        '#{$prefix}-800': shade-color($color, 60%),
+        '#{$prefix}-900': shade-color($color, 80%),
+), $theme-colors);
+
+$prefix: 'success';
+$color: map-get($theme-colors, 'success');
+$theme-colors: map-merge((
+        '#{$prefix}-100': tint-color($color, 80%),
+        '#{$prefix}-200': tint-color($color, 60%),
+        '#{$prefix}-300': tint-color($color, 40%),
+        '#{$prefix}-400': tint-color($color, 20%),
+        '#{$prefix}-500': $color,
+        '#{$prefix}-600': shade-color($color, 20%),
+        '#{$prefix}-700': shade-color($color, 40%),
+        '#{$prefix}-800': shade-color($color, 60%),
+        '#{$prefix}-900': shade-color($color, 80%),
+), $theme-colors);
+
+$prefix: 'info';
+$color: map-get($theme-colors, 'info');
+$theme-colors: map-merge((
+        '#{$prefix}-100': tint-color($color, 80%),
+        '#{$prefix}-200': tint-color($color, 60%),
+        '#{$prefix}-300': tint-color($color, 40%),
+        '#{$prefix}-400': tint-color($color, 20%),
+        '#{$prefix}-500': $color,
+        '#{$prefix}-600': shade-color($color, 20%),
+        '#{$prefix}-700': shade-color($color, 40%),
+        '#{$prefix}-800': shade-color($color, 60%),
+        '#{$prefix}-900': shade-color($color, 80%),
+), $theme-colors);
+
+$prefix: 'warning';
+$color: map-get($theme-colors, 'warning');
+$theme-colors: map-merge((
+        '#{$prefix}-100': tint-color($color, 80%),
+        '#{$prefix}-200': tint-color($color, 60%),
+        '#{$prefix}-300': tint-color($color, 40%),
+        '#{$prefix}-400': tint-color($color, 20%),
+        '#{$prefix}-500': $color,
+        '#{$prefix}-600': shade-color($color, 20%),
+        '#{$prefix}-700': shade-color($color, 40%),
+        '#{$prefix}-800': shade-color($color, 60%),
+        '#{$prefix}-900': shade-color($color, 80%),
+), $theme-colors);
+
+$prefix: 'danger';
+$color: map-get($theme-colors, 'danger');
+$theme-colors: map-merge((
+        '#{$prefix}-100': tint-color($color, 80%),
+        '#{$prefix}-200': tint-color($color, 60%),
+        '#{$prefix}-300': tint-color($color, 40%),
+        '#{$prefix}-400': tint-color($color, 20%),
+        '#{$prefix}-500': $color,
+        '#{$prefix}-600': shade-color($color, 20%),
+        '#{$prefix}-700': shade-color($color, 40%),
+        '#{$prefix}-800': shade-color($color, 60%),
+        '#{$prefix}-900': shade-color($color, 80%),
+), $theme-colors);
+
+$prefix: 'gray';
+$color: map-get($theme-colors, 'gray');
+$theme-colors: map-merge((
+        '#{$prefix}-100': tint-color($color, 80%),
+        '#{$prefix}-200': tint-color($color, 60%),
+        '#{$prefix}-300': tint-color($color, 40%),
+        '#{$prefix}-400': tint-color($color, 20%),
+        '#{$prefix}-500': $color,
+        '#{$prefix}-600': shade-color($color, 20%),
+        '#{$prefix}-700': shade-color($color, 40%),
+        '#{$prefix}-800': shade-color($color, 60%),
+        '#{$prefix}-900': shade-color($color, 80%),
+), $theme-colors);

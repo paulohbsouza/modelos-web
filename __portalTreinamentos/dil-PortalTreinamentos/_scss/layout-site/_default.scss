@@ -1,0 +1,39 @@
+// Default SITE
+
+@import "header";
+
+body {
+    background-color: $body-bg;
+    color: $body-color;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+}
+
+/* div {
+    // teste
+    border: 1px solid rgb(247, 139, 139);
+} */
+
+.content {
+    /* manter o footer bottom */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    section {
+        margin: 24px;
+
+        // teste
+        /* border: 1px solid rgb(79, 88, 167); */
+    }
+}
+
+.modal {
+    display: none;
+}
+
+@import "pages/page-home";
+@import "pages/page-inscricao";
+@import "pages/page-realizados";
+
+@import "footer";
