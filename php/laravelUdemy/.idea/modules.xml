@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/app_super_gestao.iml" filepath="$PROJECT_DIR$/.idea/app_super_gestao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/laravelUdemy.iml" filepath="$PROJECT_DIR$/.idea/laravelUdemy.iml" />
     </modules>
   </component>
 </project>
