@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\SiteContato;
 use Illuminate\Http\Request;
+use App\MotivoContato;
 
 class ContatoController extends Controller
 {
@@ -31,8 +32,33 @@ class ContatoController extends Controller
         $contato->save();
         */
 
-        SiteContato::create($request->all());
+        $motivos_contato = MotivoContato::all();
+        return view('site.contato', ['titulo' => 'Contato2', 'motivos_contato' => $motivos_contato]);
+    }
 
-        return view('site.contato', ['titulo' => 'Contato2']);
+    public function salvar (Request $request) 
+    {       
+        $regras = [
+            'nome' => 'required|min:3|max:40|unique:site_contatos',
+            'telefone' => 'required',
+            'email' => 'email',
+            'motivo_contatos_id' => 'required',
+            'mensagem' => 'required|max:2000'
+        ];
+
+        $feedback = [
+            'nome.required' => 'O campo nome precisa ser preenchido.',
+            'nome.min' => 'O campo nome precisa ter no mínimo três caracteres.',
+            'nome.max' => 'O campo nome precisa ter no maximo 40 caracteres.',
+            'nome.unique' => 'O nome ja existe.',
+            'telefone.required' => 'O campo telefone precisa ser preenchido.',
+            'required' => 'O campo :attribute precisa ser preenchido!',
+            'email' => 'O :attribute precisa ser preenchido!'
+        ];
+
+        $request->validate($regras, $feedback);
+
+        SiteContato::create($request->all());
+        return redirect()->route('site.index');
     }
 }
