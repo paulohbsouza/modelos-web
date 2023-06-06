@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Middleware\LogAcessoMiddleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware(LogAcessoMiddleware::class)
-    ->get('/', 'PrincipalController@principal')
-    ->name('site.index');
+Route::get('/', 'PrincipalController@principal')->name('site.index')->middleware('log.acesso');
     
 Route::get('/sobre', 'SobreController@sobrenos')->name('site.sobrenos');
 
@@ -26,7 +23,7 @@ Route::post('/contato', 'ContatoController@salvar')->name('site.contato');
 Route::get('/login', function(){ return 'Login'; })->name('site.login');
 
 // Interno
-Route::prefix('/app')->group( function() {  
+Route::middleware('autenticacao:padrao,perfil')->prefix('/app')->group( function() {  
     Route::get('/clientes', function(){ return 'Clientes'; })->name('in.clientes');
     Route::get('/fornecedores', 'ControllerFornecedores@index')->name('in.fornecedores');
     Route::get('/produtos', function(){ return 'Produtos'; })->name('in.produtos');
