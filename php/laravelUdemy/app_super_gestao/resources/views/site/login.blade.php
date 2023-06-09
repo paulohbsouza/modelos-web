@@ -15,11 +15,13 @@
                     <input type="text" value="{{ old('usuario') }}" name="usuario" placeholder="Usuário" class="borda-perta">
                     {{ $errors->has('usuario') ? $errors->first('usuario') : '' }}
 
-                    <input type="password" value="{{ old('senha') }}" name="senha" placeholder="Senha" class="borda-perta">
+                    <input type="password" value="{{ old('senha') }}" name="senha" placeholder="Senha"
+                        class="borda-perta">
                     {{ $errors->has('senha') ? $errors->first('senha') : '' }}
 
                     <button type="submit" class="borda-preta">Acessar</button>
                 </form>
+                {{ isset($erro) && $erro != '' ? $erro : '' }}
             </div>
         </div>
     </div>
