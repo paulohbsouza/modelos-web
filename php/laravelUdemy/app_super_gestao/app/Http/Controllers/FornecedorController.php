@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class FornecedorController extends Controller
 {
     /**
-     * 
+     *
      */
     public function index ()
     {
@@ -16,7 +16,7 @@ class FornecedorController extends Controller
     }
 
     /**
-     * 
+     *
      */
     public function listar (Request $request)
     {
@@ -24,13 +24,13 @@ class FornecedorController extends Controller
                                     ->where('site', 'like', '%'.$request->input('site').'%')
                                     ->where('uf', 'like', '%'.$request->input('uf').'%')
                                     ->where('email', 'like', '%'.$request->input('email').'%')
-                                    ->paginate(2);
+                                    ->paginate(3);
 
         return view('app.fornecedor.listar', ['fornecedores' => $fornecedores, 'request' => $request->all()]);
     }
 
     /**
-     * 
+     *
      */
     public function editar ($id, $msg = '')
     {
@@ -40,7 +40,7 @@ class FornecedorController extends Controller
     }
 
     /**
-     * 
+     *
      */
     public function adicionar (Request $request)
     {
@@ -81,7 +81,7 @@ class FornecedorController extends Controller
             {
                 $msg = "Atualizado!";
             }
-            else 
+            else
             {
                 $msg = "Erro ao atualizar!";
             }
@@ -90,5 +90,14 @@ class FornecedorController extends Controller
         }
 
         return view('app.fornecedor.adicionar', ['msg' => $msg]);
+    }
+
+    //excluir
+    public function excluir ($id)
+    {
+        Fornecedor::find($id)->delete();
+        //Fornecedor::find($id)->forceDelete();
+
+        return redirect()->route('app.fornecedor');
     }
 }
