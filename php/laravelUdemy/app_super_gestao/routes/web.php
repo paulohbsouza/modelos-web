@@ -40,6 +40,9 @@ Route::middleware('autenticacao:padrao,perfil')->prefix('/app')->group( function
 
     //Produtos
     Route::resource('produto', 'ProdutoController');
+
+    //Produto Detalhe
+    Route::resource('produto-detalhe', 'ProdutoDetalheController');
 });
 
 Route::get('/test/{var1}/{var2}', 'ControllerTest@test');

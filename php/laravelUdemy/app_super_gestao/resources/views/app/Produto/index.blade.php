@@ -15,13 +15,19 @@
         </div>
         <div class="informacao-pagina">
             <div style="width: 90%; margin-left: auto; margin-right: auto;">
+
+                 <!-- $produtos->toJson() //Eager Loading -->
+
                 <table border="1" width="100%">
                     <thead>
                     <tr>
                         <th>Nome</th>
                         <th>Descrição</th>
                         <th>Peso</th>
-                        <th>Unidade IDd</th>
+                        <th>Unidade ID</th>
+                        <th>Comprimento</th>
+                        <th>Altura</th>
+                        <th>Largura</th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -33,6 +39,10 @@
                             <td>{{ $produto->descricao }}</td>
                             <td>{{ $produto->peso }}</td>
                             <td>{{ $produto->unidade_id }}</td>
+                            <td>{{ $produto->produtoDetalhe->comprimento ?? '' }}</td>
+                            <td>{{ $produto->produtoDetalhe->altura ?? '' }}</td>
+                            <td>{{ $produto->produtoDetalhe->largura ?? '' }}</td>
+
                             <td><a href="{{ route('produto.show', ['produto' => $produto->id]) }}">Visualizar</a></td>
                             <td>
                                 <form id="form_{{ $produto->id }}" action="{{ route('produto.destroy', ['produto' => $produto->id]) }}" method="post">
