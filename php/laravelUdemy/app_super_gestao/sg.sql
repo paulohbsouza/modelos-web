@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
 -- Servidor:                     127.0.0.1
--- Versão do servidor:           10.11.1-MariaDB-log - mariadb.org binary distribution
+-- Versão do servidor:           10.11.0-MariaDB-log - mariadb.org binary distribution
 -- OS do Servidor:               Win64
 -- HeidiSQL Versão:              12.5.0.6677
 -- --------------------------------------------------------
@@ -16,16 +16,27 @@
 
 
 -- Copiando estrutura do banco de dados para sg
-CREATE DATABASE IF NOT EXISTS `sg` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
+CREATE DATABASE IF NOT EXISTS `sg` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
 USE `sg`;
+
+-- Copiando estrutura para tabela sg.clientes
+CREATE TABLE IF NOT EXISTS `clientes` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `nome` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Copiando dados para a tabela sg.clientes: ~0 rows (aproximadamente)
 
 -- Copiando estrutura para tabela sg.failed_jobs
 CREATE TABLE IF NOT EXISTS `failed_jobs` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `connection` text NOT NULL,
-  `queue` text NOT NULL,
-  `payload` longtext NOT NULL,
-  `exception` longtext NOT NULL,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -35,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `failed_jobs` (
 -- Copiando estrutura para tabela sg.filiais
 CREATE TABLE IF NOT EXISTS `filiais` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `filial` varchar(30) NOT NULL,
+  `filial` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -46,35 +57,36 @@ CREATE TABLE IF NOT EXISTS `filiais` (
 -- Copiando estrutura para tabela sg.fornecedores
 CREATE TABLE IF NOT EXISTS `fornecedores` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `nome` varchar(50) NOT NULL,
-  `site` varchar(150) DEFAULT NULL,
+  `nome` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `site` varchar(150) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `uf` varchar(3) NOT NULL,
-  `email` varchar(150) NOT NULL,
+  `uf` varchar(3) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Copiando dados para a tabela sg.fornecedores: ~6 rows (aproximadamente)
+-- Copiando dados para a tabela sg.fornecedores: ~7 rows (aproximadamente)
 INSERT INTO `fornecedores` (`id`, `nome`, `site`, `created_at`, `updated_at`, `uf`, `email`, `deleted_at`) VALUES
 	(1, 'Fornecedor1', 'fornecedor1000.net', '2023-06-04 01:33:37', '2023-06-29 01:35:38', 'SP', 'contatoX@fornecedor1000.net', '2023-06-29 01:35:38'),
 	(2, 'Fornecedor200', 'fornecedor200.com.br', '2023-06-04 01:33:37', '2023-06-13 03:00:31', 'SP', 'email@fornecedor200.com.br', '2023-06-13 03:00:31'),
 	(3, 'Fornecedor30000', 'fornecedor30000.com.br', '2023-06-08 23:55:53', '2023-06-10 20:29:40', 'MG', 'email@fornecedor30000.com.br', NULL),
 	(4, 'Fornecedor50', 'fornecedro50.net', '2023-06-09 02:54:04', '2023-06-13 03:02:58', 'MG', 'contato@fornecedro50.net', '2023-06-13 03:02:58'),
 	(5, 'Fornecedor1100', 'fonecedor1100.com.br', '2023-06-09 02:55:40', '2023-06-09 02:55:40', 'SC', 'contato@fonecedor1100.com.br', NULL),
-	(6, 'Paulo Xx56', 'fornecedro500.net', '2023-06-09 03:07:31', '2023-06-13 03:01:44', 'RS', 'paulo123@fornecedro500.net', '2023-06-13 03:01:44');
+	(6, 'Paulo Xx56', 'fornecedro500.net', '2023-06-09 03:07:31', '2023-06-13 03:01:44', 'RS', 'paulo123@fornecedro500.net', '2023-06-13 03:01:44'),
+	(8, 'Fornecedor Padrão', 'fornecedorpadrao.com.br', NULL, NULL, 'SP', 'contato@fornecedorpadrao.com.br', NULL);
 
 -- Copiando estrutura para tabela sg.log_acessos
 CREATE TABLE IF NOT EXISTS `log_acessos` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `log` varchar(200) NOT NULL,
+  `log` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=792 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=941 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Copiando dados para a tabela sg.log_acessos: ~706 rows (aproximadamente)
+-- Copiando dados para a tabela sg.log_acessos: ~918 rows (aproximadamente)
 INSERT INTO `log_acessos` (`id`, `log`, `created_at`, `updated_at`) VALUES
 	(1, 'IP asd requisitou a rota sdf', '2023-06-06 03:49:16', '2023-06-06 03:49:16'),
 	(2, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/', '2023-06-06 03:55:02', '2023-06-06 03:55:02'),
@@ -844,17 +856,166 @@ INSERT INTO `log_acessos` (`id`, `log`, `created_at`, `updated_at`) VALUES
 	(788, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-06-30 02:11:32', '2023-06-30 02:11:32'),
 	(789, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto-detalhe/1/edit', '2023-06-30 02:14:32', '2023-06-30 02:14:32'),
 	(790, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto-detalhe/1/edit', '2023-06-30 02:19:32', '2023-06-30 02:19:32'),
-	(791, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto-detalhe/1/edit', '2023-06-30 02:19:53', '2023-06-30 02:19:53');
+	(791, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto-detalhe/1/edit', '2023-06-30 02:19:53', '2023-06-30 02:19:53'),
+	(792, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/fornecedor', '2023-07-01 19:28:50', '2023-07-01 19:28:50'),
+	(793, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/login?erro=2', '2023-07-01 19:28:51', '2023-07-01 19:28:51'),
+	(794, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/login', '2023-07-01 19:28:56', '2023-07-01 19:28:56'),
+	(795, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/home', '2023-07-01 19:28:57', '2023-07-01 19:28:57'),
+	(796, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/fornecedor', '2023-07-01 19:28:59', '2023-07-01 19:28:59'),
+	(797, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 19:29:00', '2023-07-01 19:29:00'),
+	(798, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/fornecedor', '2023-07-01 19:29:02', '2023-07-01 19:29:02'),
+	(799, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 19:29:03', '2023-07-01 19:29:03'),
+	(800, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 19:29:08', '2023-07-01 19:29:08'),
+	(801, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/1', '2023-07-01 19:29:14', '2023-07-01 19:29:14'),
+	(802, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 19:29:18', '2023-07-01 19:29:18'),
+	(803, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/2', '2023-07-01 19:29:24', '2023-07-01 19:29:24'),
+	(804, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 19:29:27', '2023-07-01 19:29:27'),
+	(805, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/1', '2023-07-01 19:29:31', '2023-07-01 19:29:31'),
+	(806, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 19:29:34', '2023-07-01 19:29:34'),
+	(807, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 19:30:21', '2023-07-01 19:30:21'),
+	(808, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 19:30:41', '2023-07-01 19:30:41'),
+	(809, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 19:48:10', '2023-07-01 19:48:10'),
+	(810, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/1/edit', '2023-07-01 19:48:30', '2023-07-01 19:48:30'),
+	(811, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 19:48:32', '2023-07-01 19:48:32'),
+	(812, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 19:51:55', '2023-07-01 19:51:55'),
+	(813, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 19:53:14', '2023-07-01 19:53:14'),
+	(814, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 19:53:25', '2023-07-01 19:53:25'),
+	(815, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 19:53:55', '2023-07-01 19:53:55'),
+	(816, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 19:54:28', '2023-07-01 19:54:28'),
+	(817, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 19:54:48', '2023-07-01 19:54:48'),
+	(818, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 19:54:56', '2023-07-01 19:54:56'),
+	(819, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 20:45:05', '2023-07-01 20:45:05'),
+	(820, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 20:49:03', '2023-07-01 20:49:03'),
+	(821, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 20:55:34', '2023-07-01 20:55:34'),
+	(822, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 21:07:28', '2023-07-01 21:07:28'),
+	(823, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/fornecedor', '2023-07-01 21:07:30', '2023-07-01 21:07:30'),
+	(824, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/fornecedor', '2023-07-01 21:07:32', '2023-07-01 21:07:32'),
+	(825, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 21:07:33', '2023-07-01 21:07:33'),
+	(826, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/fornecedor', '2023-07-01 21:07:34', '2023-07-01 21:07:34'),
+	(827, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/fornecedor', '2023-07-01 21:07:36', '2023-07-01 21:07:36'),
+	(828, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/fornecedor/adicionar', '2023-07-01 21:07:37', '2023-07-01 21:07:37'),
+	(829, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/cliente', '2023-07-01 21:07:39', '2023-07-01 21:07:39'),
+	(830, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/home', '2023-07-01 21:07:40', '2023-07-01 21:07:40'),
+	(831, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/fornecedor', '2023-07-01 21:07:41', '2023-07-01 21:07:41'),
+	(832, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/fornecedor/listar', '2023-07-01 21:07:50', '2023-07-01 21:07:50'),
+	(833, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/fornecedor', '2023-07-01 21:07:54', '2023-07-01 21:07:54'),
+	(834, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/fornecedor/listar', '2023-07-01 21:07:58', '2023-07-01 21:07:58'),
+	(835, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/fornecedor', '2023-07-01 21:08:02', '2023-07-01 21:08:02'),
+	(836, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/fornecedor/listar', '2023-07-01 21:08:03', '2023-07-01 21:08:03'),
+	(837, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/fornecedor/listar', '2023-07-01 21:20:23', '2023-07-01 21:20:23'),
+	(838, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/fornecedor', '2023-07-01 21:20:45', '2023-07-01 21:20:45'),
+	(839, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/fornecedor/listar', '2023-07-01 21:20:46', '2023-07-01 21:20:46'),
+	(840, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/fornecedor/listar', '2023-07-01 21:21:19', '2023-07-01 21:21:19'),
+	(841, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/fornecedor/listar', '2023-07-01 21:35:25', '2023-07-01 21:35:25'),
+	(842, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 21:35:27', '2023-07-01 21:35:27'),
+	(843, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/2/edit', '2023-07-01 21:35:30', '2023-07-01 21:35:30'),
+	(844, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/2/edit', '2023-07-01 21:37:59', '2023-07-01 21:37:59'),
+	(845, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/2/edit', '2023-07-01 21:40:28', '2023-07-01 21:40:28'),
+	(846, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/2/edit', '2023-07-01 21:44:13', '2023-07-01 21:44:13'),
+	(847, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/fornecedor', '2023-07-01 21:44:21', '2023-07-01 21:44:21'),
+	(848, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/fornecedor/listar', '2023-07-01 21:44:23', '2023-07-01 21:44:23'),
+	(849, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 21:44:26', '2023-07-01 21:44:26'),
+	(850, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/3/edit', '2023-07-01 21:44:29', '2023-07-01 21:44:29'),
+	(851, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/3', '2023-07-01 21:44:33', '2023-07-01 21:44:33'),
+	(852, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/3', '2023-07-01 21:44:33', '2023-07-01 21:44:33'),
+	(853, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 21:44:37', '2023-07-01 21:44:37'),
+	(854, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/3/edit', '2023-07-01 21:44:45', '2023-07-01 21:44:45'),
+	(855, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/3', '2023-07-01 21:44:54', '2023-07-01 21:44:54'),
+	(856, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/3', '2023-07-01 21:44:54', '2023-07-01 21:44:54'),
+	(857, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 21:44:58', '2023-07-01 21:44:58'),
+	(858, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/3/edit', '2023-07-01 21:45:06', '2023-07-01 21:45:06'),
+	(859, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 21:45:12', '2023-07-01 21:45:12'),
+	(860, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/6/edit', '2023-07-01 21:45:14', '2023-07-01 21:45:14'),
+	(861, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 21:45:16', '2023-07-01 21:45:16'),
+	(862, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 21:48:32', '2023-07-01 21:48:32'),
+	(863, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/2/edit', '2023-07-01 21:48:36', '2023-07-01 21:48:36'),
+	(864, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 21:48:39', '2023-07-01 21:48:39'),
+	(865, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/7/edit', '2023-07-01 21:48:43', '2023-07-01 21:48:43'),
+	(866, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/7/edit', '2023-07-01 21:49:54', '2023-07-01 21:49:54'),
+	(867, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/7/edit', '2023-07-01 21:50:03', '2023-07-01 21:50:03'),
+	(868, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/7/edit', '2023-07-01 21:50:09', '2023-07-01 21:50:09'),
+	(869, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/7/edit', '2023-07-01 21:50:40', '2023-07-01 21:50:40'),
+	(870, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/7/edit', '2023-07-01 21:50:52', '2023-07-01 21:50:52'),
+	(871, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/7/edit', '2023-07-01 21:51:32', '2023-07-01 21:51:32'),
+	(872, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 21:51:43', '2023-07-01 21:51:43'),
+	(873, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 21:51:46', '2023-07-01 21:51:46'),
+	(874, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 21:51:49', '2023-07-01 21:51:49'),
+	(875, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/create', '2023-07-01 21:51:50', '2023-07-01 21:51:50'),
+	(876, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/create', '2023-07-01 21:51:53', '2023-07-01 21:51:53'),
+	(877, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 21:51:55', '2023-07-01 21:51:55'),
+	(878, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/create', '2023-07-01 21:51:57', '2023-07-01 21:51:57'),
+	(879, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/create', '2023-07-01 21:51:59', '2023-07-01 21:51:59'),
+	(880, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 21:52:01', '2023-07-01 21:52:01'),
+	(881, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/7/edit', '2023-07-01 21:52:03', '2023-07-01 21:52:03'),
+	(882, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/7/edit', '2023-07-01 21:53:05', '2023-07-01 21:53:05'),
+	(883, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/7/edit', '2023-07-01 21:56:04', '2023-07-01 21:56:04'),
+	(884, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/7', '2023-07-01 21:56:09', '2023-07-01 21:56:09'),
+	(885, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/7', '2023-07-01 21:56:09', '2023-07-01 21:56:09'),
+	(886, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 21:56:11', '2023-07-01 21:56:11'),
+	(887, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/7/edit', '2023-07-01 21:56:14', '2023-07-01 21:56:14'),
+	(888, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/7/edit', '2023-07-01 21:56:17', '2023-07-01 21:56:17'),
+	(889, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 21:56:19', '2023-07-01 21:56:19'),
+	(890, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 21:56:27', '2023-07-01 21:56:27'),
+	(891, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/2/edit', '2023-07-01 21:56:30', '2023-07-01 21:56:30'),
+	(892, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 21:56:33', '2023-07-01 21:56:33'),
+	(893, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/7/edit', '2023-07-01 21:56:34', '2023-07-01 21:56:34'),
+	(894, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/7/edit', '2023-07-01 21:57:02', '2023-07-01 21:57:02'),
+	(895, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 21:57:06', '2023-07-01 21:57:06'),
+	(896, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/7/edit', '2023-07-01 21:57:07', '2023-07-01 21:57:07'),
+	(897, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 21:57:12', '2023-07-01 21:57:12'),
+	(898, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 21:57:15', '2023-07-01 21:57:15'),
+	(899, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/7/edit', '2023-07-01 21:57:18', '2023-07-01 21:57:18'),
+	(900, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/7/edit', '2023-07-01 21:58:40', '2023-07-01 21:58:40'),
+	(901, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 22:09:08', '2023-07-01 22:09:08'),
+	(902, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/7/edit', '2023-07-01 22:09:10', '2023-07-01 22:09:10'),
+	(903, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/7/edit', '2023-07-01 22:09:59', '2023-07-01 22:09:59'),
+	(904, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/7/edit', '2023-07-01 22:10:18', '2023-07-01 22:10:18'),
+	(905, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/7/edit', '2023-07-01 22:10:59', '2023-07-01 22:10:59'),
+	(906, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/7/edit', '2023-07-01 22:11:12', '2023-07-01 22:11:12'),
+	(907, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/7/edit', '2023-07-01 22:11:23', '2023-07-01 22:11:23'),
+	(908, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/7/edit', '2023-07-01 22:12:28', '2023-07-01 22:12:28'),
+	(909, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/7/edit', '2023-07-01 22:14:12', '2023-07-01 22:14:12'),
+	(910, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/7/edit', '2023-07-01 22:19:01', '2023-07-01 22:19:01'),
+	(911, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/7/edit', '2023-07-01 22:19:49', '2023-07-01 22:19:49'),
+	(912, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/7', '2023-07-01 22:20:17', '2023-07-01 22:20:17'),
+	(913, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/7', '2023-07-01 22:20:17', '2023-07-01 22:20:17'),
+	(914, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 22:20:19', '2023-07-01 22:20:19'),
+	(915, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/create', '2023-07-01 22:20:23', '2023-07-01 22:20:23'),
+	(916, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 22:20:37', '2023-07-01 22:20:37'),
+	(917, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/1/edit', '2023-07-01 22:20:40', '2023-07-01 22:20:40'),
+	(918, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/1', '2023-07-01 22:20:43', '2023-07-01 22:20:43'),
+	(919, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/1', '2023-07-01 22:20:43', '2023-07-01 22:20:43'),
+	(920, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 22:20:45', '2023-07-01 22:20:45'),
+	(921, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/1/edit', '2023-07-01 22:20:48', '2023-07-01 22:20:48'),
+	(922, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 22:20:50', '2023-07-01 22:20:50'),
+	(923, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/create', '2023-07-01 22:20:54', '2023-07-01 22:20:54'),
+	(924, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 22:25:36', '2023-07-01 22:25:36'),
+	(925, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/1/edit', '2023-07-01 22:25:38', '2023-07-01 22:25:38'),
+	(926, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/1', '2023-07-01 22:25:41', '2023-07-01 22:25:41'),
+	(927, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/1/edit', '2023-07-01 22:25:41', '2023-07-01 22:25:41'),
+	(928, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 22:25:53', '2023-07-01 22:25:53'),
+	(929, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/create', '2023-07-01 22:26:10', '2023-07-01 22:26:10'),
+	(930, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 22:26:11', '2023-07-01 22:26:11'),
+	(931, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/create', '2023-07-01 22:26:11', '2023-07-01 22:26:11'),
+	(932, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 22:26:14', '2023-07-01 22:26:14'),
+	(933, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/create', '2023-07-01 22:26:14', '2023-07-01 22:26:14'),
+	(934, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 22:28:08', '2023-07-01 22:28:08'),
+	(935, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 22:28:08', '2023-07-01 22:28:08'),
+	(936, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/8', '2023-07-01 22:28:18', '2023-07-01 22:28:18'),
+	(937, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 22:28:21', '2023-07-01 22:28:21'),
+	(938, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 22:28:26', '2023-07-01 22:28:26'),
+	(939, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/8/edit', '2023-07-01 22:28:29', '2023-07-01 22:28:29'),
+	(940, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 22:28:32', '2023-07-01 22:28:32');
 
 -- Copiando estrutura para tabela sg.migrations
 CREATE TABLE IF NOT EXISTS `migrations` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `migration` varchar(255) NOT NULL,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Copiando dados para a tabela sg.migrations: ~14 rows (aproximadamente)
+-- Copiando dados para a tabela sg.migrations: ~16 rows (aproximadamente)
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 	(1, '2014_10_12_000000_create_users_table', 1),
 	(2, '2019_08_19_000000_create_failed_jobs_table', 1),
@@ -869,12 +1030,14 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 	(11, '2023_06_03_214054_alter_fornecedores_softdelete', 1),
 	(12, '2023_06_04_223530_create_motivo_contatos_table', 2),
 	(13, '2023_06_04_234150_alter_table_site_contatos_add_fk_motivo_contatos', 3),
-	(14, '2023_06_06_004357_create_log_acessos_table', 4);
+	(14, '2023_06_06_004357_create_log_acessos_table', 4),
+	(15, '2023_07_01_170846_alter_produtos_relacionamento_fornecedores', 5),
+	(16, '2023_07_01_194248_create_clientes_pedidos_produtos', 6);
 
 -- Copiando estrutura para tabela sg.motivo_contatos
 CREATE TABLE IF NOT EXISTS `motivo_contatos` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `motivos_contato` varchar(20) NOT NULL,
+  `motivos_contato` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -886,27 +1049,60 @@ INSERT INTO `motivo_contatos` (`id`, `motivos_contato`, `created_at`, `updated_a
 	(2, 'Elogio', '2023-06-05 01:52:43', '2023-06-05 01:52:43'),
 	(3, 'Reclamação', '2023-06-05 01:52:43', '2023-06-05 01:52:43');
 
+-- Copiando estrutura para tabela sg.pedidos
+CREATE TABLE IF NOT EXISTS `pedidos` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `cliente_id` bigint(20) unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `pedidos_cliente_id_foreign` (`cliente_id`),
+  CONSTRAINT `pedidos_cliente_id_foreign` FOREIGN KEY (`cliente_id`) REFERENCES `clientes` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Copiando dados para a tabela sg.pedidos: ~0 rows (aproximadamente)
+
+-- Copiando estrutura para tabela sg.pedidos_produtos
+CREATE TABLE IF NOT EXISTS `pedidos_produtos` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `pedido_id` bigint(20) unsigned NOT NULL,
+  `produto_id` bigint(20) unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `pedidos_produtos_pedido_id_foreign` (`pedido_id`),
+  KEY `pedidos_produtos_produto_id_foreign` (`produto_id`),
+  CONSTRAINT `pedidos_produtos_pedido_id_foreign` FOREIGN KEY (`pedido_id`) REFERENCES `pedidos` (`id`),
+  CONSTRAINT `pedidos_produtos_produto_id_foreign` FOREIGN KEY (`produto_id`) REFERENCES `produtos` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Copiando dados para a tabela sg.pedidos_produtos: ~0 rows (aproximadamente)
+
 -- Copiando estrutura para tabela sg.produtos
 CREATE TABLE IF NOT EXISTS `produtos` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `nome` varchar(100) NOT NULL,
-  `descricao` text DEFAULT NULL,
+  `fornecedor_id` bigint(20) unsigned NOT NULL DEFAULT 8,
+  `nome` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `descricao` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `peso` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `unidade_id` bigint(20) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `produtos_unidade_id_foreign` (`unidade_id`),
+  KEY `produtos_fornecedor_id_foreign` (`fornecedor_id`),
+  CONSTRAINT `produtos_fornecedor_id_foreign` FOREIGN KEY (`fornecedor_id`) REFERENCES `fornecedores` (`id`),
   CONSTRAINT `produtos_unidade_id_foreign` FOREIGN KEY (`unidade_id`) REFERENCES `unidades` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Copiando dados para a tabela sg.produtos: ~5 rows (aproximadamente)
-INSERT INTO `produtos` (`id`, `nome`, `descricao`, `peso`, `created_at`, `updated_at`, `unidade_id`) VALUES
-	(1, 'Geladeira', 'Geladeira/Refrigerador ummm 375L', 80, '2023-06-24 00:55:39', '2023-06-24 00:55:39', 1),
-	(2, 'Smat TV', 'Smart TV 43 polegadas', 3, '2023-06-24 00:56:44', '2023-06-24 00:56:44', 1),
-	(3, 'Bicicleta', 'Comum', 15, '2023-06-29 00:46:12', '2023-06-29 00:46:12', 1),
-	(6, 'Bicicleta 2', 'Comum / Casual', 15, '2023-06-29 04:13:06', '2023-06-29 04:15:53', 1),
-	(7, 'Ventilador', '6 pás', 1, '2023-06-29 04:32:22', '2023-06-29 04:32:38', 1);
+-- Copiando dados para a tabela sg.produtos: ~6 rows (aproximadamente)
+INSERT INTO `produtos` (`id`, `fornecedor_id`, `nome`, `descricao`, `peso`, `created_at`, `updated_at`, `unidade_id`) VALUES
+	(1, 5, 'Geladeira', 'Geladeira/Refrigerador ummm 375L', 80, '2023-06-24 00:55:39', '2023-07-01 22:20:43', 1),
+	(2, 5, 'Smat TV', 'Smart TV 43 polegadas', 3, '2023-06-24 00:56:44', '2023-06-24 00:56:44', 1),
+	(3, 3, 'Bicicleta', 'Comum', 15, '2023-06-29 00:46:12', '2023-06-29 00:46:12', 1),
+	(6, 8, 'Bicicleta 2', 'Comum / Casual', 15, '2023-06-29 04:13:06', '2023-06-29 04:15:53', 1),
+	(7, 3, 'Ventilador', '6 pás', 1, '2023-06-29 04:32:22', '2023-07-01 21:56:09', 1),
+	(8, 8, 'Cama casal', 'Cama de casal grande', 40, '2023-07-01 22:28:08', '2023-07-01 22:28:08', 1);
 
 -- Copiando estrutura para tabela sg.produtos_filiais
 CREATE TABLE IF NOT EXISTS `produtos_filiais` (
@@ -954,15 +1150,15 @@ CREATE TABLE IF NOT EXISTS `site_contatos` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `nome` varchar(50) NOT NULL,
-  `telefone` varchar(20) NOT NULL,
-  `email` varchar(30) NOT NULL,
-  `mensagem` text NOT NULL,
+  `nome` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `telefone` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mensagem` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `motivo_contatos_id` bigint(20) unsigned NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Copiando dados para a tabela sg.site_contatos: ~2 rows (aproximadamente)
+-- Copiando dados para a tabela sg.site_contatos: ~0 rows (aproximadamente)
 INSERT INTO `site_contatos` (`id`, `created_at`, `updated_at`, `nome`, `telefone`, `email`, `mensagem`, `motivo_contatos_id`) VALUES
 	(1, '2023-06-05 03:31:28', '2023-06-05 03:31:28', 'treinamento10', '(35) 9 9974-5083', 'paulohbsouza@gmail.com', 'Preencha aqui a sua mensagem', 3),
 	(2, '2023-06-05 03:31:43', '2023-06-05 03:31:43', 'turma externa wewewe', '(35) 9 9974-5083', 'paulohbsouza@gmail.com', 'Preencha aqui a sua mensagem', 2);
@@ -970,8 +1166,8 @@ INSERT INTO `site_contatos` (`id`, `created_at`, `updated_at`, `nome`, `telefone
 -- Copiando estrutura para tabela sg.unidades
 CREATE TABLE IF NOT EXISTS `unidades` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `unidade` varchar(5) NOT NULL,
-  `descricao` varchar(30) NOT NULL,
+  `unidade` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `descricao` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -984,11 +1180,11 @@ INSERT INTO `unidades` (`id`, `unidade`, `descricao`, `created_at`, `updated_at`
 -- Copiando estrutura para tabela sg.users
 CREATE TABLE IF NOT EXISTS `users` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) NOT NULL,
-  `remember_token` varchar(100) DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),

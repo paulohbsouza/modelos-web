@@ -23,6 +23,7 @@
                     <tr>
                         <th>Nome</th>
                         <th>Descrição</th>
+                        <th>Fornecedor</th>
                         <th>Peso</th>
                         <th>Unidade ID</th>
                         <th>Comprimento</th>
@@ -37,11 +38,12 @@
                         <tr>
                             <td>{{ $produto->nome }}</td>
                             <td>{{ $produto->descricao }}</td>
+                            <td>{{ $produto->fornecedor->nome }}</td>
                             <td>{{ $produto->peso }}</td>
                             <td>{{ $produto->unidade_id }}</td>
-                            <td>{{ $produto->produtoDetalhe->comprimento ?? '' }}</td>
-                            <td>{{ $produto->produtoDetalhe->altura ?? '' }}</td>
-                            <td>{{ $produto->produtoDetalhe->largura ?? '' }}</td>
+                            <td>{{ $produto->itemDetalhe->comprimento ?? '' }}</td>
+                            <td>{{ $produto->itemDetalhe->altura ?? '' }}</td>
+                            <td>{{ $produto->itemDetalhe->largura ?? '' }}</td>
 
                             <td><a href="{{ route('produto.show', ['produto' => $produto->id]) }}">Visualizar</a></td>
                             <td>
@@ -69,7 +71,7 @@
                 {{ $produtos->lastItem() }} - Número do último item por página
                 <br/>
                 <br/>
-                Exibindo {{ $produtos->count() }} $produtos de {{ $produtos->total() }} (de {{ $produtos->firstItem() }} a {{ $produtos->lastItem() }})
+                Exibindo {{ $produtos->count() }} produtos de {{ $produtos->total() }} (de {{ $produtos->firstItem() }} a {{ $produtos->lastItem() }})
 
             </div>
         </div>
