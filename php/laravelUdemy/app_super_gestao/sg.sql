@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
 -- Servidor:                     127.0.0.1
--- Versão do servidor:           10.11.0-MariaDB-log - mariadb.org binary distribution
+-- Versão do servidor:           10.11.1-MariaDB-log - mariadb.org binary distribution
 -- OS do Servidor:               Win64
 -- HeidiSQL Versão:              12.5.0.6677
 -- --------------------------------------------------------
@@ -16,27 +16,30 @@
 
 
 -- Copiando estrutura do banco de dados para sg
-CREATE DATABASE IF NOT EXISTS `sg` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+CREATE DATABASE IF NOT EXISTS `sg` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
 USE `sg`;
 
 -- Copiando estrutura para tabela sg.clientes
 CREATE TABLE IF NOT EXISTS `clientes` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `nome` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nome` varchar(50) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Copiando dados para a tabela sg.clientes: ~0 rows (aproximadamente)
+INSERT INTO `clientes` (`id`, `nome`, `created_at`, `updated_at`) VALUES
+	(1, 'José Alberto', '2023-07-04 00:43:04', '2023-07-04 00:43:04'),
+	(2, 'Roberta Gonçalves', '2023-07-04 00:43:36', '2023-07-04 00:43:36');
 
 -- Copiando estrutura para tabela sg.failed_jobs
 CREATE TABLE IF NOT EXISTS `failed_jobs` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text NOT NULL,
+  `queue` text NOT NULL,
+  `payload` longtext NOT NULL,
+  `exception` longtext NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -46,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `failed_jobs` (
 -- Copiando estrutura para tabela sg.filiais
 CREATE TABLE IF NOT EXISTS `filiais` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `filial` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `filial` varchar(30) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -57,12 +60,12 @@ CREATE TABLE IF NOT EXISTS `filiais` (
 -- Copiando estrutura para tabela sg.fornecedores
 CREATE TABLE IF NOT EXISTS `fornecedores` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `nome` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `site` varchar(150) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nome` varchar(50) NOT NULL,
+  `site` varchar(150) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `uf` varchar(3) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `uf` varchar(3) NOT NULL,
+  `email` varchar(150) NOT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -80,11 +83,11 @@ INSERT INTO `fornecedores` (`id`, `nome`, `site`, `created_at`, `updated_at`, `u
 -- Copiando estrutura para tabela sg.log_acessos
 CREATE TABLE IF NOT EXISTS `log_acessos` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `log` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `log` varchar(200) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=941 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=982 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Copiando dados para a tabela sg.log_acessos: ~918 rows (aproximadamente)
 INSERT INTO `log_acessos` (`id`, `log`, `created_at`, `updated_at`) VALUES
@@ -1005,12 +1008,53 @@ INSERT INTO `log_acessos` (`id`, `log`, `created_at`, `updated_at`) VALUES
 	(937, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 22:28:21', '2023-07-01 22:28:21'),
 	(938, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 22:28:26', '2023-07-01 22:28:26'),
 	(939, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto/8/edit', '2023-07-01 22:28:29', '2023-07-01 22:28:29'),
-	(940, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 22:28:32', '2023-07-01 22:28:32');
+	(940, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/produto', '2023-07-01 22:28:32', '2023-07-01 22:28:32'),
+	(941, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/home', '2023-07-04 00:00:35', '2023-07-04 00:00:35'),
+	(942, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app', '2023-07-04 00:01:01', '2023-07-04 00:01:01'),
+	(943, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/', '2023-07-04 00:01:03', '2023-07-04 00:01:03'),
+	(944, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/login', '2023-07-04 00:01:08', '2023-07-04 00:01:08'),
+	(945, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/login', '2023-07-04 00:01:12', '2023-07-04 00:01:12'),
+	(946, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/home', '2023-07-04 00:01:12', '2023-07-04 00:01:12'),
+	(947, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/home', '2023-07-04 00:03:06', '2023-07-04 00:03:06'),
+	(948, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/home', '2023-07-04 00:19:50', '2023-07-04 00:19:50'),
+	(949, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/home', '2023-07-04 00:20:43', '2023-07-04 00:20:43'),
+	(950, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/cliente', '2023-07-04 00:20:47', '2023-07-04 00:20:47'),
+	(951, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/cliente', '2023-07-04 00:21:21', '2023-07-04 00:21:21'),
+	(952, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/cliente', '2023-07-04 00:30:27', '2023-07-04 00:30:27'),
+	(953, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/cliente', '2023-07-04 00:34:25', '2023-07-04 00:34:25'),
+	(954, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/cliente/create', '2023-07-04 00:34:32', '2023-07-04 00:34:32'),
+	(955, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/cliente/create', '2023-07-04 00:34:50', '2023-07-04 00:34:50'),
+	(956, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/clientes/create', '2023-07-04 00:35:08', '2023-07-04 00:35:08'),
+	(957, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/', '2023-07-04 00:35:10', '2023-07-04 00:35:10'),
+	(958, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/login', '2023-07-04 00:35:14', '2023-07-04 00:35:14'),
+	(959, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/login', '2023-07-04 00:35:18', '2023-07-04 00:35:18'),
+	(960, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/home', '2023-07-04 00:35:18', '2023-07-04 00:35:18'),
+	(961, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/cliente', '2023-07-04 00:35:22', '2023-07-04 00:35:22'),
+	(962, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/cliente/create', '2023-07-04 00:35:27', '2023-07-04 00:35:27'),
+	(963, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/cliente', '2023-07-04 00:35:36', '2023-07-04 00:35:36'),
+	(964, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/cliente/create', '2023-07-04 00:35:38', '2023-07-04 00:35:38'),
+	(965, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/cliente/create', '2023-07-04 00:36:27', '2023-07-04 00:36:27'),
+	(966, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/cliente', '2023-07-04 00:36:30', '2023-07-04 00:36:30'),
+	(967, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/cliente/create', '2023-07-04 00:36:32', '2023-07-04 00:36:32'),
+	(968, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/cliente', '2023-07-04 00:42:39', '2023-07-04 00:42:39'),
+	(969, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/cliente/create', '2023-07-04 00:42:39', '2023-07-04 00:42:39'),
+	(970, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/cliente', '2023-07-04 00:42:41', '2023-07-04 00:42:41'),
+	(971, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/cliente/create', '2023-07-04 00:42:42', '2023-07-04 00:42:42'),
+	(972, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/cliente', '2023-07-04 00:42:43', '2023-07-04 00:42:43'),
+	(973, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/cliente/create', '2023-07-04 00:42:43', '2023-07-04 00:42:43'),
+	(974, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/cliente', '2023-07-04 00:43:04', '2023-07-04 00:43:04'),
+	(975, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/cliente', '2023-07-04 00:43:04', '2023-07-04 00:43:04'),
+	(976, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/cliente/create', '2023-07-04 00:43:13', '2023-07-04 00:43:13'),
+	(977, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/cliente', '2023-07-04 00:43:36', '2023-07-04 00:43:36'),
+	(978, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/cliente', '2023-07-04 00:43:36', '2023-07-04 00:43:36'),
+	(979, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/cliente/create', '2023-07-04 00:43:38', '2023-07-04 00:43:38'),
+	(980, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/cliente', '2023-07-04 00:43:40', '2023-07-04 00:43:40'),
+	(981, 'IP 127.0.0.1 requisitou a rota /php/laravelUdemy/app_super_gestao/public/app/cliente/create', '2023-07-04 00:43:40', '2023-07-04 00:43:40');
 
 -- Copiando estrutura para tabela sg.migrations
 CREATE TABLE IF NOT EXISTS `migrations` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `migration` varchar(255) NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1037,7 +1081,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- Copiando estrutura para tabela sg.motivo_contatos
 CREATE TABLE IF NOT EXISTS `motivo_contatos` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `motivos_contato` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `motivos_contato` varchar(20) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -1082,8 +1126,8 @@ CREATE TABLE IF NOT EXISTS `pedidos_produtos` (
 CREATE TABLE IF NOT EXISTS `produtos` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `fornecedor_id` bigint(20) unsigned NOT NULL DEFAULT 8,
-  `nome` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `descricao` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nome` varchar(100) NOT NULL,
+  `descricao` text DEFAULT NULL,
   `peso` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -1150,15 +1194,15 @@ CREATE TABLE IF NOT EXISTS `site_contatos` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `nome` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `telefone` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `mensagem` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nome` varchar(50) NOT NULL,
+  `telefone` varchar(20) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `mensagem` text NOT NULL,
   `motivo_contatos_id` bigint(20) unsigned NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Copiando dados para a tabela sg.site_contatos: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela sg.site_contatos: ~2 rows (aproximadamente)
 INSERT INTO `site_contatos` (`id`, `created_at`, `updated_at`, `nome`, `telefone`, `email`, `mensagem`, `motivo_contatos_id`) VALUES
 	(1, '2023-06-05 03:31:28', '2023-06-05 03:31:28', 'treinamento10', '(35) 9 9974-5083', 'paulohbsouza@gmail.com', 'Preencha aqui a sua mensagem', 3),
 	(2, '2023-06-05 03:31:43', '2023-06-05 03:31:43', 'turma externa wewewe', '(35) 9 9974-5083', 'paulohbsouza@gmail.com', 'Preencha aqui a sua mensagem', 2);
@@ -1166,32 +1210,32 @@ INSERT INTO `site_contatos` (`id`, `created_at`, `updated_at`, `nome`, `telefone
 -- Copiando estrutura para tabela sg.unidades
 CREATE TABLE IF NOT EXISTS `unidades` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `unidade` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `descricao` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `unidade` varchar(5) NOT NULL,
+  `descricao` varchar(30) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Copiando dados para a tabela sg.unidades: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela sg.unidades: ~1 rows (aproximadamente)
 INSERT INTO `unidades` (`id`, `unidade`, `descricao`, `created_at`, `updated_at`) VALUES
 	(1, 'UN', 'Unidade', '2023-06-24 00:52:57', '2023-06-24 00:52:57');
 
 -- Copiando estrutura para tabela sg.users
 CREATE TABLE IF NOT EXISTS `users` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
+  `remember_token` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Copiando dados para a tabela sg.users: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela sg.users: ~1 rows (aproximadamente)
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 	(1, 'Paulo', 'paulo@email.com', '2023-06-08 18:34:16', '123', NULL, NULL, NULL);
 
