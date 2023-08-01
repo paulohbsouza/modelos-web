@@ -1,0 +1,95 @@
+/*************************
+		GLOBAL
+ *************************/
+
+body {
+    /*background-color: ;*/
+    /*background: url("../img/background.png");
+  	background-position: bottom right;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: auto;*/
+    background-color: #fff;
+}
+
+
+/* For mobile devices */
+
+@media only screen and (max-width: 767px) {
+    body {
+        /* The file size of this background image is 93% smaller
+     	* to improve page load speed on mobile internet connections */
+        /*background-image: url(../img/background-mobile.png);*/
+    }
+}
+
+@font-face {
+    font-family: 'BebasNeue';
+    src: local(BebasNeue), url('../fonts/BebasNeue.otf');
+}
+
+
+/* Azul Oficial >>	color: #007FFF; */
+
+
+/*************************
+		HOME
+ *************************/
+
+#img-logo {
+    margin: 0% 0% 0% 0%;
+}
+
+#img-icon {
+    margin: 0% 3% 0% 0%;
+}
+
+#top ul {
+    margin-top: 8%;
+}
+
+#top img {
+    margin-top: 11.5%;
+}
+
+#banner-home {
+    margin-top: 5%;
+}
+
+#cards-home {
+    margin: 12% 0% 14% 0%;
+}
+
+#text-footer {
+    padding: 7% 0% 7% 0%;
+    color: #C0C0C0;
+    background-color: #1C1C1C;
+}
+
+#text-footer a {
+    color: #C0C0C0;
+    text-decoration: none;
+}
+
+#ass a:hover {
+    color: #8A2AE3;
+}
+
+#bg_img {
+    margin-bottom: 0%;
+}
+
+.style-menu {
+    font-family: 'BebasNeue';
+    font-size: 1.24rem;
+    color: #007FFF;
+}
+
+a:hover {
+    color: #b3b3b3;
+}
+
+.title-rodape {
+    font-family: 'BebasNeue';
+    font-size: 1.6rem;
+}
