@@ -59,6 +59,7 @@ class TarefaController extends Controller
     public function create()
     {
         //
+        return view('tarefa.create');
     }
 
     /**
@@ -70,6 +71,7 @@ class TarefaController extends Controller
     public function store(Request $request)
     {
         //
+        dd($request->all());
     }
 
     /**
