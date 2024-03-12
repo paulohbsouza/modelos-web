@@ -3,11 +3,15 @@ import { CountContext } from "./App";
 
 const AnotherChild = () => {
 
-    const {count} = useContext(CountContext);
+    const {setCount} = useContext(CountContext);
 
     return (
         <>
-            <div>child {count}</div>
+            <button onClick={() => {
+                setCount((previousState) => {
+                    return previousState + 1;
+                });
+            }}>AnotherChild - Increment</button>
         </>
     );
 }

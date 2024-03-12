@@ -8,7 +8,8 @@ const Child = () => {
 
     return (
         <>
-            <div>child {count}</div>
+            <div>Increment {count}</div>
+            <br/>
             <AnotherChild/>
         </>
     );
