@@ -1,22 +1,15 @@
 import { useContext } from "react";
-import { CountContext } from "../App";
+import { DataContext } from "../context/Context";
 
 const AnotherChild = () => {
 
     //Este é o Context utilizando uma parte de um objeto
-    const {setCount} = useContext(CountContext);
+    const {dispatchCount} = useContext(DataContext);
 
     return (
         <>
-            {/* Descontinuado (Versão 1)
             <button onClick={() => {
-                setCount((previousState) => {
-                    return previousState + 1;
-                });
-            }}>AnotherChild - Increment</button>
-            */}
-            <button onClick={() => {
-                setCount({
+                dispatchCount({
                     type: 'INCREMENT1',
                     payload: 5,
                 });
@@ -24,7 +17,7 @@ const AnotherChild = () => {
             <br/>
             <br/>
             <button onClick={() => {
-                setCount({
+                dispatchCount({
                     type: 'DECREMENT1',
                     payload: 2,
                 });
@@ -33,7 +26,7 @@ const AnotherChild = () => {
             <br/>
             <hr/>
             <button onClick={() => {
-                setCount({
+                dispatchCount({
                     type: 'INCREMENT2',
                     payload: 3,
                 });
@@ -41,7 +34,7 @@ const AnotherChild = () => {
             <br/>
             <br/>
             <button onClick={() => {
-                setCount({
+                dispatchCount({
                     type: 'DECREMENT2',
                     payload: 1,
                 });

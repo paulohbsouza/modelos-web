@@ -3,6 +3,6 @@ import { CountContext } from '../@types/types';
 
 //Esta é a criação do Context
 export const DataContext = createContext<CountContext>({
-    State: null, 
-    SetState: () => {}
+    countState: null, 
+    dispatchCount: () => {}
   });

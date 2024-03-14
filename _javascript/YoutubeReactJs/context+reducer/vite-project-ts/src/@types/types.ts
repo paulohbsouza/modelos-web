@@ -2,14 +2,14 @@ import React from "react";
 
 //Tipagem do Context
 export type CountContext = {
-    State: any;
-    SetState: React.Dispatch<any>;
+    countState: any,
+    dispatchCount: React.Dispatch<any>,
 }
 
 //Tipagem do Reducer
 export type StorageState = {
-    count1: number
-    count2: number
+    count1: number,
+    count2: number,
 }
 
 //Tipagem do Reducer
